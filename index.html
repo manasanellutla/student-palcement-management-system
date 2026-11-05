@@ -4,112 +4,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Placement Management System</title>
+
+    <!-- CSS File -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Student Placement Management System</h1>
-    <p>Manage student profiles, companies and placements</p>
-</header>
+    <!-- Header Section -->
+    <header>
+        <h1>Student Placement Management System</h1>
+        <p>Manage student profiles, companies and placements</p>
+    </header>
 
-<nav>
-    <a href="#student">Student Profile</a>
-    <a href="#company">Company Registration</a>
-    <a href="#eligibility">Eligibility</a>
-    <a href="#interview">Interview</a>
-    <a href="#reports">Reports</a>
-</nav>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#student">Student Profile</a>
+        <a href="#company">Company Registration</a>
+        <a href="#eligibility">Eligibility</a>
+        <a href="#interview">Interview</a>
+        <a href="#reports">Reports</a>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Student Profile -->
-    <section id="student" class="card">
-        <h2>Student Profile Management</h2>
+        <!-- 1. Student Profile Management -->
+        <section id="student" class="card">
 
-        <form id="studentForm">
-            <input type="text" id="name" placeholder="Student Name" required>
-            <input type="text" id="roll" placeholder="Roll Number" required>
-            <input type="email" id="email" placeholder="Email Address" required>
-            <input type="number" id="cgpa" placeholder="CGPA" min="0" max="10" step="0.1" required>
-            <input type="text" id="skills" placeholder="Skills">
-            <button type="submit">Save Profile</button>
-        </form>
+            <h2>Student Profile Management</h2>
 
-        <div id="studentDetails"></div>
-    </section>
+            <form id="studentForm">
 
-    <!-- Company Registration -->
-    <section id="company" class="card">
-        <h2>Company Registration</h2>
+                <input type="text" id="name"
+                    placeholder="Student Name" required>
 
-        <form id="companyForm">
-            <input type="text" id="companyName" placeholder="Company Name" required>
-            <input type="text" id="role" placeholder="Job Role" required>
-            <input type="number" id="minCgpa" placeholder="Minimum CGPA" min="0" max="10" step="0.1" required>
-            <button type="submit">Register Company</button>
-        </form>
+                <input type="text" id="roll"
+                    placeholder="Roll Number" required>
 
-        <h3>Registered Companies</h3>
-        <ul id="companyList"></ul>
-    </section>
+                <input type="email" id="email"
+                    placeholder="Email Address" required>
 
-    <!-- Eligibility Checking -->
-    <section id="eligibility" class="card">
-        <h2>Student Eligibility Checking</h2>
+                <input type="number" id="cgpa"
+                    placeholder="CGPA"
+                    min="0" max="10" step="0.1" required>
 
-        <button type="button" id="checkEligibility">
-            Check Eligibility
-        </button>
+                <input type="text" id="skills"
+                    placeholder="Skills">
 
-        <div id="eligibilityResult"></div>
-    </section>
+                <button type="submit">Save Profile</button>
 
-    <!-- Interview Scheduling -->
-    <section id="interview" class="card">
-        <h2>Interview Scheduling</h2>
+            </form>
 
-        <form id="interviewForm">
-            <input type="text" id="interviewCompany" placeholder="Company Name" required>
-            <input type="date" id="interviewDate" required>
-            <input type="time" id="interviewTime" required>
-            <button type="submit">Schedule Interview</button>
-        </form>
+            <div id="studentDetails"></div>
 
-        <h3>Scheduled Interviews</h3>
-        <ul id="interviewList"></ul>
-    </section>
+        </section>
 
-    <!-- Placement Reports -->
-    <section id="reports" class="card">
-        <h2>Placement Reports</h2>
 
-        <div class="report-box">
-            <h3>Total Students</h3>
-            <p id="studentCount">0</p>
-        </div>
+        <!-- 2. Company Registration -->
+        <section id="company" class="card">
 
-        <div class="report-box">
+            <h2>Company Registration</h2>
+
+            <form id="companyForm">
+
+                <input type="text" id="companyName"
+                    placeholder="Company Name" required>
+
+                <input type="text" id="role"
+                    placeholder="Job Role" required>
+
+                <input type="number" id="minCgpa"
+                    placeholder="Minimum CGPA"
+                    min="0" max="10" step="0.1" required>
+
+                <button type="submit">Register Company</button>
+
+            </form>
+
             <h3>Registered Companies</h3>
-            <p id="companyCount">0</p>
-        </div>
 
-        <div class="report-box">
+            <ul id="companyList"></ul>
+
+        </section>
+
+
+        <!-- 3. Eligibility Checking -->
+        <section id="eligibility" class="card">
+
+            <h2>Student Eligibility Checking</h2>
+
+            <button type="button" id="checkEligibility">
+                Check Eligibility
+            </button>
+
+            <div id="eligibilityResult"></div>
+
+        </section>
+
+
+        <!-- 4. Interview Scheduling -->
+        <section id="interview" class="card">
+
+            <h2>Interview Scheduling</h2>
+
+            <form id="interviewForm">
+
+                <input type="text" id="interviewCompany"
+                    placeholder="Company Name" required>
+
+                <input type="date" id="interviewDate" required>
+
+                <input type="time" id="interviewTime" required>
+
+                <button type="submit">Schedule Interview</button>
+
+            </form>
+
             <h3>Scheduled Interviews</h3>
-            <p id="interviewCount">0</p>
-        </div>
 
-        <button type="button" id="refreshReport">Refresh Reports</button>
-    </section>
+            <ul id="interviewList"></ul>
 
-</div>
+        </section>
 
-<footer>
-    <p>Student Placement Management System | Academic Project</p>
-</footer>
 
-<script src="script.js"></script>
+        <!-- 5. Placement Reports -->
+        <section id="reports" class="card">
+
+            <h2>Placement Reports</h2>
+
+            <div class="report-box">
+                <h3>Total Students</h3>
+                <p id="studentCount">0</p>
+            </div>
+
+            <div class="report-box">
+                <h3>Registered Companies</h3>
+                <p id="companyCount">0</p>
+            </div>
+
+            <div class="report-box">
+                <h3>Scheduled Interviews</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <button type="button" id="refreshReport">
+                Refresh Reports
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>
+            Student Placement Management System |
+            Academic Project
+        </p>
+    </footer>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
 
 </body>
 </html>
